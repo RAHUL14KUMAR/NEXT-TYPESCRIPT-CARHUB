@@ -77,6 +77,7 @@ function CarDetails({isOpen,closeModal,car}:CarDetailsProps) {
                   </h2>
 
                   <div className='mt-3 flex flex-wrap gap-4'>
+                    {/* object.entries return array of key/values of the car property */}
                     {Object.entries(car).map(([key, value]) => (
                       <div className='flex justify-between gap-5 w-full text-right' key={key} >
                         <h4 className='text-grey capitalize'>
