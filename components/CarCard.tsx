@@ -1,4 +1,5 @@
 "use client"
+import CarDetails from "./CarDetails";
 import { CarProps } from '@/types'
 import React,{useState} from 'react'
 import Image from 'next/image'
@@ -57,6 +58,7 @@ function CarCard({car}:Car) {
           />
         </div>
       </div>
+      <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} />
     </div>
   )
 }
