@@ -5,9 +5,16 @@ import Image from 'next/image'
 import { fetchCars } from '@/utils'
 import { all } from 'axios'
 import {CarCard} from '@/components'
+import { HomeProps } from '@/types'
 
-export default async function Home() {
-  const allCars=await fetchCars();
+export default async function Home({searchParams}:HomeProps) {
+  const allCars=await fetchCars({
+    manufacturer:searchParams.manufacturer||"",
+    year:searchParams.year||2000,
+    fuel:searchParams.fuel|| "",
+    limit:searchParams.limit|| 10,
+    model:searchParams.model|| ''
+  });
   // console.log(allCars);
 
   const isDataEmpty=!Array.isArray(allCars) || allCars.length<1 || !allCars
@@ -52,3 +59,4 @@ export default async function Home() {
     </main>
   )
 }
+
