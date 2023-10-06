@@ -2,7 +2,8 @@ const axios = require('axios');
 import { CarProps} from "@/types";
 export async function fetchCars(){
     const headers={
-        
+        'X-RapidAPI-Key': 'aabb56aca5msh6f30fa87f753e9dp10e9aajsnc190f3784fb7',
+        'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
     }
     const response= await axios.get('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla',{
         headers:headers
